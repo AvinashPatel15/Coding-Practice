@@ -17,14 +17,17 @@
     <h1 class="h1 text-center text-primary">Todo App With Vanilla JS</h1>
 
     <!-- Button trigger modal -->
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-bs-toggle="modal"
-      data-bs-target="#staticBackdrop"
-    >
-      Add New Todo
-    </button>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <button
+        style="font-weight: 500; font-size: 20px"
+        type="button"
+        class="btn btn-outline-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+      >
+        Create Todo
+      </button>
+    </div>
 
     <!-- Modal -->
     <div
@@ -40,7 +43,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="staticBackdropLabel">
-              Add Todo
+              Create Todo
             </h1>
             <button
               type="button"
@@ -49,18 +52,71 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
-          <!-- <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div> -->
+          <div class="modal-body">
+            <form id="todoForm">
+              <div class="form-group">
+                <label for="title">Title:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                  required
+                />
+              </div>
+              <div class="form-group mt-2">
+                <label for="description">Description:</label>
+                <textarea
+                  class="form-control"
+                  id="description"
+                  name="description"
+                  required
+                ></textarea>
+              </div>
+              <div
+                class="d-flex gap-3 justify-content-start align-items-center mt-3"
+              >
+                <!-- cancel button -->
+                <button
+                  type="button"
+                  class="btn btn-outline-danger"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <!-- submit button -->
+                <input
+                  type="submit"
+                  class="btn btn-outline-success"
+                  value="Add Todo"
+                />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div
+      class="toast"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      data-autohide="true"
+      data-delay="2000"
+    >
+      <div class="toast-header">
+        <strong class="mr-auto">Bootstrap</strong>
+        <button
+          type="button"
+          class="ml-2 mb-1 close"
+          data-dismiss="toast"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">Hello, world! This is a toast message.</div>
     </div>
 
     <!-- Bootstrap JS Plugin -->
